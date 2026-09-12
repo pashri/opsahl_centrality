@@ -69,6 +69,14 @@ uv run numpydoc lint src/opsahl_centrality/*.py
 
 Supports Python 3.8+ and NetworkX 2.3+; CI tests both floors.
 
+To release: bump `version` in `pyproject.toml`, then tag and push.
+Pushing a `v*` tag runs the checks, builds, and publishes the release;
+it fails if the tag and the project version disagree.
+
+```sh
+git tag -a v1.1.0 -m "v1.1.0" && git push origin v1.1.0
+```
+
 [post]: https://toreopsahl.com/2010/03/20/closeness-centrality-in-networks-with-disconnected-components/
 [nx]: https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.closeness_centrality.html
 [freeman]: http://leonidzhukov.ru/hse/2013/socialnetworks/papers/freeman79-centrality.pdf
